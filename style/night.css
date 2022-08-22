@@ -1,0 +1,28 @@
+body.night {
+  background: url(../img/prism-black.svg);
+  background-size: 300%;
+}
+
+.header.night,
+.glass.night {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.header-block.night,
+.header-block.night p {
+  color: #ccc;
+  background-color: #222;
+}
+
+.header-block.night img,
+.glass.night img,
+input.night {
+  filter: invert(1);
+}
+
+th.night,
+td.night {
+  background-color: #222;
+  color: #ccc;
+  border: none;
+}

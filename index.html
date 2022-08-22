@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="./img/favicon.ico.svg">
+  <link rel="stylesheet" href="./style/style.css" />
+  <link rel="stylesheet" href="./style/night.css" />
+  <title>Web Lab#1</title>
+</head>
+
+<body>
+  <!--Header-->
+  <div class="header">
+    <div class="nickname header-block">
+      <img class="avatar"
+        src="https://sun9-43.userapi.com/s/v1/ig2/OvRRgO1KU9OwBb2mTRp5ywllEQ2peh8jbEOlAmgUqqDWyr3xaVRmu6v8sHpu3rdIg0m8MzluNQzpsXdFIOQn2le-.jpg?size=200x200&quality=95&crop=351,0,1816,1818&ava=1"
+        alt="Avatar" />
+      <a href="https://t.me/filberol">
+        <p>@filberol</p>
+      </a>
+      <p>Vadim Mikhu</p>
+    </div>
+    <div class="buttons">
+      <ul>
+        <li class="header-block">P3131</li>
+        <li class="header-block">#3108</li>
+      </ul>
+      <button class="menu-button header-block">
+        <img class="menu-button" src="./img/menu-button.svg" alt="Menu" decoding="async" />
+      </button>
+    </div>
+  </div>
+  <!--Description-->
+  <div id="description">
+    <div class="desc-header">
+      <div class="header-block">Выполнил: Миху Вадим Дмитриевич</div>
+      <div class="header-block">s339106</div>
+      <div class="header-block">P3131</div>
+      <div class="header-block">#3108</div>
+      <a href="https://github.com/filberol" class="header-block">GitHub</a>
+      <button id="night-mode" class="header-block">
+        mode
+        <div id="dragger"></div>
+      </button>
+    </div>
+    <div class="desc-text">
+      Разработать PHP-скрипт, определяющий попадание точки на координатной
+      плоскости в заданную область, и создать HTML-страницу, которая формирует
+      данные для отправки их на обработку этому скрипту. Параметр R и
+      координаты точки должны передаваться скрипту посредством HTTP-запроса.
+      Скрипт должен выполнять валидацию данных и возвращать HTML-страницу с
+      таблицей, содержащей полученные параметры и результат вычислений - факт
+      попадания или непопадания точки в область. Предыдущие результаты должны
+      сохраняться между запросами и отображаться в таблице. Кроме того, ответ
+      должен содержать данные о текущем времени и времени работы скрипта.
+      Разработанная HTML-страница должна удовлетворять следующим требованиям:
+    </div>
+    <ul>
+      <li>
+        Для расположения текстовых и графических элементов необходимо
+        использовать блочную верстку.
+      </li>
+      <li>
+        Данные формы должны передаваться на обработку посредством
+        POST-запроса.
+      </li>
+      <li>Таблицы стилей должны располагаться в отдельных файлах.</li>
+      <li>
+        При работе с CSS должно быть продемонстрировано использование
+        селекторов дочерних элементов, селекторов потомств, селекторов
+        псевдоклассов, селекторов атрибутов а также такие свойства стилей CSS,
+        как наследование и каскадирование.
+      </li>
+      <li>
+        HTML-страница должна иметь "шапку", содержащую ФИО студента, номер
+        группы и новер варианта.
+      </li>
+      <li>
+        При оформлении шапки необходимо явным образом задать шрифт
+        (sans-serif), его цвет и размер в каскадной таблице стилей.
+      </li>
+      <li>Отступы элементов ввода должны задаваться в пикселях.</li>
+      <li>
+        Страница должна содержать сценарий на языке JavaScript, осуществляющий
+        валидацию значений, вводимых пользователем в поля формы.
+      </li>
+      <li>
+        Любые некорректные значения (например, буквы в координатах точки или
+        отрицательный радиус) должны блокироваться.
+      </li>
+    </ul>
+  </div>
+  <!--Content-->
+  <div class="content">
+    <div class="target-container">
+      <div class="target glass" data-tilt>
+        <img src="./img/graph.svg" alt="Graph" />
+        <div class="content-text bordered">
+          Изменение X: Checkbox {'-4','-3','-2','-1','0','1','2','3','4'}<br />
+          Изменение Y: Text {-3 ... 3}<br />
+          Изменение R: Select {'1','2','3','4','5'}
+        </div>
+      </div>
+      <div class="target glass">
+        <div class="form">
+          <fieldset>
+            <legend class="content-text bordered">Выбор значений</legend>
+            <div class="x-check">
+              <label for="check-4" class="content-text">X</label>
+              <div class="hor-checkbox">
+                <input type="checkbox" id="check-4" name="checkbox" value="-4" class="x-check" />
+                <label for="check-4">-4</label>
+              </div>
+              <div class="hor-checkbox">
+                <input type="checkbox" id="check-3" name="checkbox" value="-3" class="x-check" />
+                <label for="check-3">-3</label>
+              </div>
+              <div class="hor-checkbox">
+                <input type="checkbox" id="check-2" name="checkbox" value="-2" class="x-check" />
+                <label for="check-2">-2</label>
+              </div>
+              <div class="hor-checkbox">
+                <input type="checkbox" id="check-1" name="checkbox" value="-1" class="x-check" />
+                <label for="check-1">-1</label>
+              </div>
+              <div class="hor-checkbox">
+                <input type="checkbox" id="check-0" name="checkbox" value="0" class="x-check" />
+                <label for="check-0">0</label>
+              </div>
+              <div class="hor-checkbox">
+                <input type="checkbox" id="check+1" name="checkbox" value="1" class="x-check" />
+                <label for="check+1">1</label>
+              </div>
+              <div class="hor-checkbox">
+                <input type="checkbox" id="check+2" name="checkbox" value="2" class="x-check" />
+                <label for="check+2">2</label>
+              </div>
+              <div class="hor-checkbox">
+                <input type="checkbox" id="check+3" name="checkbox" value="3" class="x-check" />
+                <label for="check+3">3</label>
+              </div>
+              <div class="hor-checkbox">
+                <input type="checkbox" id="check+4" name="checkbox" value="4" class="x-check" />
+                <label for="check+4">4</label>
+              </div>
+            </div>
+            <div class="y-check">
+              <label for="y-textinput" class="content-text">Y</label>
+              <input id="y-textinput" type="text" name="textarea" autocomplete="off" placeholder="Число от -3 до 3"
+                size="30" />
+            </div>
+            <div class="r-check">
+              <label for="rcheck1" class="content-text">R</label>
+              <div class="hor-radio">
+                <input type="radio" id="rcheck1" name="radio" value="1" class="r-radio" />
+                <label for="rcheck1">1</label>
+              </div>
+              <div class="hor-radio">
+                <input type="radio" id="rcheck2" name="radio" value="2" class="r-radio" />
+                <label for="rcheck2">2</label>
+              </div>
+              <div class="hor-radio">
+                <input type="radio" id="rcheck3" name="radio" value="3" class="r-radio" />
+                <label for="rcheck3">3</label>
+              </div>
+              <div class="hor-radio">
+                <input type="radio" id="rcheck4" name="radio" value="4" class="r-radio" />
+                <label for="rcheck4">4</label>
+              </div>
+              <div class="hor-radio">
+                <input type="radio" id="rcheck5" name="radio" value="5" class="r-radio" />
+                <label for="rcheck5">5</label>
+              </div>
+            </div>
+          </fieldset>
+          <button id="submit" class="content-text">Проверить</button>
+        </div>
+      </div>
+    </div>
+    <div class="table-container">
+      <div class="glass">
+        <table>
+          <tbody>
+            <tr>
+              <th colspan="4" class="bordered">Результаты попаданий</th>
+            </tr>
+            <tr>
+              <td>Координаты</td>
+              <td>Время</td>
+              <td>Исполнение</td>
+              <td>Результат</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <script src="./js/jquery-3.6.0.js" defer></script>
+  <script src="./js/main.js" defer type="module"></script>
+  <script src="./js/tilt.jquery.js" defer></script>
+</body>
+
+</html>
