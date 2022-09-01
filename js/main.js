@@ -42,7 +42,7 @@ $("#submit").click(function () {
     return parseInt(this.value);
   }).get();
   //text
-  const text = parseInt($("#y-textinput").val());
+  const text = $("#y-textinput").val();
   //radio
   const radio = parseInt($(".r-radio:checked").val());
 

@@ -5,18 +5,19 @@ export function loadRecords() {
   } else {
     JSON.parse(storage).object.forEach(element => {
       appendRecord(element);
-    });;
+    });
   }
 }
 
 export function appendRecord(record) {
   let table = $(".table-container div table tbody");
+  let nightMode = localStorage.getItem("mode") == "night" ? "night" : "";
   table.append(`
               <tr class="logged">
-              <td>${record.cords}</td>
-              <td>${record.time}</td>
-              <td>${record.exec}</td>
-              <td>${record.result}</td>
+              <td class="${nightMode}" >${record.cords}</td>
+              <td class="${nightMode}" >${record.time}</td>
+              <td class="${nightMode}" >${record.exec}</td>
+              <td class="${nightMode}" >${record.result}</td>
             </tr>
   `);
 }
@@ -25,7 +26,6 @@ export function saveRecord(record) {
   const storage = localStorage.getItem("storage");
   const objStor = JSON.parse(storage);
   objStor.object.push(record);
-  console.log(objStor);
   localStorage.setItem("storage", JSON.stringify(objStor));
 }
 

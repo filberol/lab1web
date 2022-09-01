@@ -1,8 +1,24 @@
 <?php
-$box = $_POST["x"];
-$text = $_POST["y"];
-$radio = $_POST["r"];
-$timezone = $_POST["timezone"];
+try {
+  $box = (int)$_POST["x"];
+  $text = $_POST["y"];
+  $radio = (int)$_POST["r"];
+  $timezone = $_POST["timezone"];
+
+  $textval = (float)$text;
+  $textend = (int)substr($text, 15);
+  if ($textval == 3 || $textval == -3) {
+    if ($textend > 0) {
+      exit();
+    }
+  }
+
+  checkX($box);
+  checkY((float)$text);
+  checkR($radio);
+} catch (Exception $e) {
+  exit();
+}
 
 $cords = "( $box, $text, $radio )";
 $time = date('H:i:s', time() - $timezone * 60);
@@ -16,6 +32,19 @@ $jsonData = "{" .
   "\"result\":\"$result\"" .
   "}";
 echo $jsonData;
+
+function checkX($val)
+{
+  ($val >= -4 && $val <= 4) ?: throw new Exception();
+}
+function checkY($val)
+{
+  ($val >= -3 && $val <= 3) ?: throw new Exception();
+}
+function checkR($val)
+{
+  ($val >= 1 && $val <= 5) ?: throw new Exception();
+}
 
 function checkCords($x, $y, $r)
 {
